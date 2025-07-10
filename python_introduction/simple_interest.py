@@ -1,7 +1,7 @@
-Principal = 1000    # Initial investment amount(#1000)
-Rate = 0.05  # Interest rate (5%)
-Time = 3   # Time period in years (3 years)
+principal = 1000    # Initial investment amount(#1000)
+rate = 0.05  # Interest rate (5%)
+time = 3   # Time period in years (3 years)
 
-interest = (Principal * Rate * Time)   # Simple interest formula
+interest = (principal * rate * time)   # Simple interest formula
 
 print("The simple interest is:", interest)
