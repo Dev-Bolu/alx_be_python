@@ -1,7 +1,7 @@
-Principal = 1000    # Initial investment amount(#1000)
-Rate = 0.05  # Interest rate (5%)
-Time = 3   # Time period in years (3 years)
+P = 1000    # Initial investment amount(#1000)
+R = 0.05  # Interest rate (5%)
+T = 3   # Time period in years (3 years)
 
-Interest = (Principal * Rate * Time) / 100 # Simple interest formula
+I = (P * R * T) /  # Simple interest formula
 
-print("The simple interest is:", Interest)
+print("The simple interest is:", I)
