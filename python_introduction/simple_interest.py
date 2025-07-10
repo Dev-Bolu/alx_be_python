@@ -1,5 +1,5 @@
 Principal = 1000    # Initial investment amount(#1000)
-Rate = 5  # Interest rate (5%)
+Rate = 0.05  # Interest rate (5%)
 Time = 3   # Time period in years (3 years)
 
 Interest = (Principal * Rate * Time) / 100 # Simple interest formula
