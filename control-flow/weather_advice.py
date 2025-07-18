@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-nput("What's the weather like today? (sunny/rainy/cold): ").lower()
-=======
-# Prompt the user for the current weather condition
 weather = input("What's the weather like today? (sunny/rainy/cold): ").strip().lower()
->>>>>>> 484d2583505569dd41862a9b7215d6540327f550
 
 # Provide clothing recommendations based on the weather
 if weather == "sunny":
