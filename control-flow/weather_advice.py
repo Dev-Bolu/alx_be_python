@@ -1,4 +1,4 @@
-input("What's the weather like today? (sunny/rainy/cold): ").lower()
+nput("What's the weather like today? (sunny/rainy/cold): ").lower()
 
 if "sunny":
     print("Wear a t-shirt and sunglasses.")
