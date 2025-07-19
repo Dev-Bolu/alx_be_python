@@ -13,7 +13,7 @@ reminder_message = ""
 # Process the task based on priority and time sensitivity
 match priority:
     case "high":
-        reminder_message = f"'{task}' is a high priority task"
+        reminder_message = f"Reminder: '{task}' is a high priority task"
         if time_bound == "yes":
             reminder_message += " that requires immediate attention today!"
         else:
@@ -25,7 +25,7 @@ match priority:
         else:
             reminder_message += ". Consider completing it when you have free time."
     case "low":
-        reminder_message = f"'{task}' is a low priority task"
+        reminder_message = f"Note: '{task}' is a low priority task"
         if time_bound == "yes":
             reminder_message += " that requires immediate attention today!"
         else:
@@ -38,4 +38,4 @@ match priority:
             reminder_message += " Consider completing it when you have free time."
 
 # Provide a customized reminder
-print(f"\nReminder: {reminder_message}")
+print(f"\n {reminder_message}")
