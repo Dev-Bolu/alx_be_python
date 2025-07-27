@@ -28,7 +28,7 @@ def main():
             for i, item in enumerate(shopping_list, start=1):
                 print(f"{i}. {item}")
         elif choice == '4':
-            print("Exiting the Shopping List Manager.")
+            print("Goodbye!.")
             break
         else:
             print("Invalid choice. Please try again.")
