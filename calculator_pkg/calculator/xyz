@@ -1,0 +1,58 @@
+# calculator_demo.py
+
+import operations_new as operations 
+"""
+
+# Step 1: Import the custom module you created
+import operations_new as operations
+
+print("--- Demonstrating each function individually ---")
+
+# --- Using the 'add' function ---
+# We will add a series of numbers.
+numbers_to_add = [15, 25, 30, 5]
+total = operations.add(*numbers_to_add) # The * unpacks the list into arguments
+print(f"1. ADD: Adding {numbers_to_add} results in: {total}")
+
+# --- Using the 'subtract' function ---
+# We will subtract numbers from an initial value.
+# Remember: Use a variable name like 'difference', not 'subtract'!
+difference = operations.subtract(200, 50, 18, 2)
+print(f"2. SUBTRACT: 200 - 50 - 18 - 2 results in: {difference}")
+
+# --- Using the 'multiply' function ---
+# We will multiply a series of numbers.
+product = operations.multiply(2, 3, 5, 10)
+print(f"3. MULTIPLY: 2 * 3 * 5 * 10 results in: {product}")
+
+# --- Using the 'divide' function (Successful case) ---
+# We will divide a number sequentially.
+quotient = operations.divide(500, 5, 10)
+print(f"4. DIVIDE: 500 / 5 / 10 results in: {quotient}")
+
+# --- Using the 'divide' function (Error case) ---
+# We will test the division by zero error handling.
+error_result = operations.divide(100, 10, 0, 2)
+print(f"5. DIVIDE (ERROR): Attempting to divide by zero gives: '{error_result}'")
+
+
+print("\n--- Combining functions for a complex calculation ---")
+"""
+# Let's solve: (50 + 70) - (4 * 5)
+
+# First, calculate the addition part
+first_part = operations.add(50, 70)
+print(f"Calculation Step 1 (Addition): 50 + 70 = {first_part}")
+
+# Second, calculate the multiplication part
+second_part = operations.multiply(4, 5)
+print(f"Calculation Step 2 (Multiplication): 4 * 5 = {second_part}")
+
+# Finally, use subtraction to get the final answer
+final_answer = operations.subtract(first_part, second_part)
+
+print("\n-------------------------------------------")
+print(f"FINAL RESULT of (50 + 70) - (4 * 5) is: {final_answer}")
+print("-------------------------------------------")
+
+

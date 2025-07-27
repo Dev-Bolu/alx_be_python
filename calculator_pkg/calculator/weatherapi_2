@@ -1,0 +1,77 @@
+import requests
+from tabulate import tabulate # Step 1: Import the tabulate function
+
+# --- API Configuration ---
+api_key = "b94c0d1d53d4402da0b191605252607"
+base_url = "http://api.weatherapi.com/v1/current.json"
+
+# Parameters for the API request
+params = {
+    "key": api_key,
+    "q": "London"
+}
+
+# --- Main Program Logic ---
+try:
+    response = requests.get(base_url, params=params)
+    response.raise_for_status()  # Check for errors (like 401, 404)
+    
+    weather_data = response.json()
+
+    # --- Extracting the Data for the Table ---
+    # We pull out the specific data points we want to display.
+    location_info = weather_data['location']
+    current_weather = weather_data['current']
+
+    # --- Example 1: Creating a Simple, Clean Table ---
+    print("--- Current Weather Summary ---")
+    
+    # Define the data for the table as a list of lists
+    simple_table_data = [
+        ["Location", location_info['name']],
+        ["Region", location_info['region']],
+        ["Local Time", location_info['localtime']],
+        ["Temperature", f"{current_weather['temp_c']}°C / {current_weather['temp_f']}°F"],
+        ["Condition", current_weather['condition']['text']],
+        ["Wind", f"{current_weather['wind_kph']} kph"],
+        ["Humidity", f"{current_weather['humidity']}%"]
+    ]
+
+    # Use tabulate to format the data
+    # The 'headers' argument defines the column titles.
+    # The 'tablefmt' argument lets you choose a style (e.g., 'grid', 'pipe', 'pretty').
+    print(tabulate(simple_table_data, headers=["Metric", "Value"], tablefmt="grid"))
+
+
+    # --- Example 2: Creating a More Detailed Table ---
+    print("\n--- Detailed Weather Breakdown ---")
+
+    # This table has more rows and is organized by category.
+    detailed_table_data = [
+        # Location Details
+        ["Location Name", location_info['name']],
+        ["Country", location_info['country']],
+        ["Latitude", location_info['lat']],
+        ["Longitude", location_info['lon']],
+        # Current Weather Details
+        ["Observation Time (UTC)", current_weather['last_updated']],
+        ["Temperature (C)", f"{current_weather['temp_c']}°C"],
+        ["Feels Like (C)", f"{current_weather['feelslike_c']}°C"],
+        ["Condition", current_weather['condition']['text']],
+        # Atmosphere Details
+        ["Wind Speed (kph)", current_weather['wind_kph']],
+        ["Wind Direction", current_weather['wind_dir']],
+        ["Pressure (mb)", current_weather['pressure_mb']],
+        ["Precipitation (mm)", current_weather['precip_mm']],
+        ["Humidity", f"{current_weather['humidity']}%"],
+        ["Cloud Cover", f"{current_weather['cloud']}%"],
+        ["UV Index", current_weather['uv']],
+    ]
+
+    print(tabulate(detailed_table_data, headers=["Detail", "Current Status"], tablefmt="fancy_grid"))
+
+
+except requests.exceptions.HTTPError as http_err:
+    print(f"HTTP error occurred: {http_err}")
+except requests.exceptions.RequestException as err:
+    print(f"An error occurred: {err}")

@@ -1,0 +1,50 @@
+import requests
+
+# Your API key for authentication
+api_key = "b94c0d1d53d4402da0b191605252607"
+
+# The base URL for the current weather endpoint
+# Note: I removed the extra slash "//" before current.json
+base_url = "http://api.weatherapi.com/v1/forecast.json "
+
+# --- The Corrected Part ---
+# Create a dictionary to hold the parameters for the API request.
+# The API documentation specifies the parameter names are 'key' and 'q'.
+params = {
+    "key": api_key,
+    "q": "ijebu-ode",  # The location for which you want the weather
+    "days": 3,  # Optional: specify the number of days for the forecast
+    "hours": 12,  # Optional: specify the number of hours for the forecast
+    "alerts": "yes",  # Optional: disable weather alerts
+    "aqi": "yes",  # Optional: enable air quality index
+}
+
+try:
+    # Pass the dictionary to the 'params' argument of requests.get()
+    # The requests library will correctly build the URL like:
+    # http://api.weatherapi.com/v1/current.json?key=YOUR_KEY&q=London
+    response = requests.get(base_url, params=params)
+
+    # This line raises an error if the request was unsuccessful (e.g., 4xx or 5xx status codes)
+    response.raise_for_status() 
+
+    # If the request was successful, parse the JSON data
+    weather_data = response.json()
+
+    # Print the full dictionary of weather data
+    print(weather_data)
+
+    # You can also print specific pieces of information
+    print("\n--- Extracted Information ---")
+    location_name = weather_data['location']['name']
+    temperature_c = weather_data['current']['temp_c']
+    condition = weather_data['current']['condition']['text']
+
+    print(f"Location: {location_name}")
+    print(f"Temperature: {temperature_c}°C")
+    print(f"Condition: {condition}")
+
+except requests.exceptions.HTTPError as http_err:
+    print(f"HTTP error occurred: {http_err}")  # e.g., 401 for invalid key, 400 for bad request
+except requests.exceptions.RequestException as err:
+    print(f"An error occurred: {err}")

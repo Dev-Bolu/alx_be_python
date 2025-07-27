@@ -1,0 +1,72 @@
+
+fruits = ["mango","pawpaw","cashew","banana","apple","orange","agbalumo","watermelon"]
+
+print(f"The second fruit on the list is : {fruits[1]}")
+print(f"The last fruit on the list is : {fruits[-1]}")
+print(f"The length of the fruits list is : {len(fruits)}")
+print(f"The first three fruits in the list are : {fruits[:3]}")
+print(f"The last three fruits in the list are : {fruits[-3:]}")
+print(f"The first fruit in the list is : {fruits[0]}")
+print(f"Add a new fruit to the list : {fruits.append('grape')}")
+print(f"The updated fruits list is : {fruits}")
+print(f"remove a fruit from the list : {fruits.remove('banana')}")
+list_of_fruits = fruits.copy()
+print(f"The copied list of fruits is : {list_of_fruits}")
+print(f"The index of 'apple' in the list is : {fruits.index('apple')}")
+print(f"The count of 'mango' in the list is : {fruits.count('mango')}")
+print(f"sort the fruits list : {fruits.sort()}")
+print(f"The sorted fruits list is : {fruits}")
+print(f"sort the fruits list : {fruits.sort(reverse=True)}")
+print(f"The sorted fruits list is : {fruits}")
+print(f"The reversed fruits list is : {fruits[::-1]}")  
+print(f"The fruits list in reverse order is : {fruits.reverse()}")
+print(f"The fruits list after reversing is : {fruits}")
+print(f"The sorted list of fruits is : {sorted(fruits)}")
+print(f"The reversed list of fruits is : {list(reversed(fruits))}")
+print(f"The fruits list in uppercase is : {[fruit.upper() for fruit in fruits]}")
+print(f"The fruits list in lowercase is : {[fruit.lower() for fruit in fruits ]}")
+print(f"The fruits list in title case is : {[fruit.title() for fruit in fruits]}")
+print(f"The fruits list in capitalized case is : {[fruit.capitalize() for fruit in fruits]}")
+print(inserted_fruit := fruits.insert(2, "kiwi"))
+print(f"The updated fruits list after inserting 'kiwi' is : {fruits}")
+print(f"The fruits list after extending with ['peach', 'plum'] is : {fruits.extend(['peach', 'plum'])}")
+print(f"The updated fruits list after extending is : {fruits}")
+print(f"remove the last fruit from the list : {fruits.pop(0)}")
+print(f"The updated fruits list after removing the first fruit is : {fruits}")
+print(f"pop a fruit from the list : {fruits.pop()}")
+print(f"The updated fruits list after popping is : {fruits}")
+print(f"The fruits list after clearing is : {fruits.clear()}")
+print(f"The updated fruits list after clearing is : {fruits}")
+
+print()
+
+book = {
+    "title": "Python Programming",
+    "author": "John Doe",
+    "year": 2023,
+    "publisher": "Tech Books Publishing",
+    "genre": "Programming"
+    }
+print(f"The book title is : {book['title']}")
+print(f"key of the book is : {book.keys()}")
+print(f"value of the book is : {book.values()}")
+print(f"key-value pairs of the book is : {book.items()}")
+print(f"The author of the book is : {book.get('author')}")
+print(f"The year of publication is : {book.get('year')}")
+print(f"The publisher of the book is : {book['publisher']}")
+
+print()
+
+number_list = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10,1,1,2,6,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10)
+print(f"The first number in the list is : {number_list[0]}")
+print(f"The last number in the list is : {number_list[-1]}")
+print(f"The length of the number list is : {len(number_list)}")
+print(f"The maximum number in the list is : {max(number_list)}")    
+print(f"The minimum number in the list is : {min(number_list)}")
+print(f"The sum of the numbers in the list is : {sum(number_list)}")
+print(f"The count of number 1 in the list is : {number_list.count(1)}")
+print(f"The count of number 2 in the list is : {number_list.count(2)}")
+print(f"The count of number 3 in the list is : {number_list.count(3)}")
+print(f"The count of number 4 in the list is : {number_list.count(4)}")
+print(f"The count of number 5 in the list is : {number_list.count(5)}")
+print(f"The unique numbers in the list are : {set(number_list)}")
