@@ -18,6 +18,8 @@ class BankAccount:
             return True
         
     def display_balance(self):
+        self.__account_balance = self.__account_balance if self.__account_balance >= 0 else 0
+        # Display the balance with two decimal places
         print(f"Current Balance: #{self.__account_balance:.2f}")
         
         
