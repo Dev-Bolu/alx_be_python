@@ -1,0 +1,30 @@
+class Dog:
+    species = 'Csnis faamilaris'
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        
+    def __str__(self):
+        return f'{self.name} is {self.age} years old.'
+    
+    def speak(self,sound):
+        return f"{self.name} says {sound}"
+    
+    
+class JackRussellTerrier(Dog):
+    def speak(self, sound= 'Arf'):
+        return super().speak(sound)
+    
+# Example usage
+dog1 = Dog("Buddy", 5)
+print(dog1)  # Output: Buddy is 5 years old.
+print(dog1.speak("Woof!"))
+dog2 = JackRussellTerrier("Max", 3)
+print(dog2)  # Output: Max is 3 years old.
+print(dog2.speak())  # Output: Max barks Arf
+print(dog2.speak("Yap!"))  # Output: Max says Yap!
+print(f"{dog1.name} is a {dog1.species}.")
+print(dog2.speak())
+print(dog1.speak("sty"))
+
