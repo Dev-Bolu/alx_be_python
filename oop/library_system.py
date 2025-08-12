@@ -44,5 +44,5 @@ class Library:
         if not self.books:
             print("The library has no books.")
         else:
-            for idx, book in enumerate(self.books, 1):
-                print(f"{idx}. {book}")
+            for  book in (self.books):
+                print(f" {book}")
