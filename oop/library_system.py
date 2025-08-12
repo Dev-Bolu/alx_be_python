@@ -45,4 +45,4 @@ class Library:
             print("The library has no books.")
         else:
             for  book in (self.books):
-                print(f" {book}")
+                print(f"{book}")
